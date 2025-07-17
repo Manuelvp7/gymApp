@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="card"></div>
-  </body>
-  <script src="./src/main.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymApp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>GymApp</header>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="filter-zone" id="category-zone">
+        <h3>Category</h3>
+        <ul class="filter-list" id="category-list">
+          <!-- Categories will be injected here -->
+        </ul>
+      </div>
+      <div class="filter-zone" id="equipment-zone">
+        <h3>Equipment</h3>
+        <ul class="filter-list" id="equipment-list">
+          <!-- Equipment will be injected here -->
+        </ul>
+      </div>
+      <div class="filter-zone" id="muscle-zone">
+        <h3>Muscle</h3>
+        <ul class="filter-list" id="muscle-list">
+          <!-- Muscles will be injected here -->
+        </ul>
+      </div>
+    </aside>
+    <main id="exercise-cards">
+      <div class="card">
+        <h2>Exercise Name</h2>
+        <img src="https://images.pexels.com/photos/2294363/pexels-photo-2294363.jpeg?cs=srgb&dl=pexels-823sl-2294363.jpg&fm=jpg" alt="Exercise Image">
+        <p>Description</p>
+        <p>Category</p>
+        <p>Equipment</p>
+        <p>Muscles</p>
+      </div>
+      <!-- Exercise cards will be injected here -->
+    </main>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+</body>
 </html>
