@@ -1,3 +1,5 @@
+import createExcerciseHtml from './use-cases/create-excercise-html.js';
+
 // Exercise State Management Module
 const ExerciseManager = (function() {
   // Private variables (not accessible outside the module)
@@ -15,7 +17,7 @@ const ExerciseManager = (function() {
   };
 
   const fetchExercises = async() => {
-    const res = await fetch("https://wger.de/api/v2/exerciseinfo/?limit=900");
+    const res = await fetch("https://wger.de/api/v2/exerciseinfo/?limit=10");
     const data = await res.json();
     const {results} = data;
     return results;
@@ -73,13 +75,17 @@ const init = async () => {
   try {
     await ExerciseManager.init();
     
-    // Now you can use the module's methods
     console.log('Categories:', ExerciseManager.getCategories());
     console.log('Exercises:', ExerciseManager.getExercises());
-    console.log('Exercises for category 8:', ExerciseManager.filterExercisesByCategory(8));    
+    console.log('Exercises for category 8:', ExerciseManager.filterExercisesByCategory(8));
+    console.log('Exercise 0:', ExerciseManager.getExercises()[0]);
+    const exerciseHtml = createExcerciseHtml(ExerciseManager.getExercises()[0]);
+    document.getElementById('exercise-cards').appendChild(exerciseHtml);
+    console.log(exerciseHtml);
   } catch (error) {
     console.error('Initialization failed:', error);
   }
 };
 
 init();
+
